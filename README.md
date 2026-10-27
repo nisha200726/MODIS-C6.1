@@ -39,11 +39,13 @@ Each fire observation pixel corresponds to approximately 1 km spatial resolution
 
 ---
 
-## 💾 Data Storage & Repository Architecture
+## 💾 Data Storage & Releases
 
-- **Raw Datasets (1.82+ GiB):** The full archive comprises 26 annual ZIP archives (`modis_2000_all_countries.zip` to `modis_2025_all_countries.zip`) and extracted country-wise CSV datasets. To prevent repository bloat, eliminate HTTP 408 timeout errors, and respect Git/GitHub bandwidth quotas, raw archives are maintained in local storage and excluded via `.gitignore`.
-- **Sample Datasets:** Small sample datasets and attribute descriptors are maintained in the [`sample_data/`](sample_data/) folder for immediate testing and verification.
-- **Source Code:** Scripts for loading, filtering, statistical aggregation, and visualization are tracked in [`scripts/`](scripts/).
+- **GitHub Release (v1.0.0):** Yearly country archives are hosted as release assets on the [v1.0.0 Release Page](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0).
+  - [Download 2000 Archive (modis_2000_all_countries.zip)](https://github.com/nisha200726/MODIS-C6.1/releases/download/v1.0.0/modis_2000_all_countries.zip)
+- **Local Storage:** The full collection of 26 annual ZIP archives (2000–2025, ~1.80 GiB) and extracted country CSVs are kept locally and excluded from Git history via `.gitignore` to maintain a lightweight, fast repository.
+- **Sample Datasets:** Small sample datasets and attribute descriptors are maintained in [`sample_data/`](sample_data/) for immediate out-of-the-box testing.
+- **Source Code & Pipelines:** Analysis, filtering, and upload utilities are tracked in [`scripts/`](scripts/).
 
 ---
 
