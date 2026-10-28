@@ -39,13 +39,58 @@ Each fire observation pixel corresponds to approximately 1 km spatial resolution
 
 ---
 
-## 💾 Data Storage & Releases
+## 💾 Data Access & Download
 
-- **GitHub Release (v1.0.0):** Yearly country archives are hosted as release assets on the [v1.0.0 Release Page](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0).
-  - [Download 2000 Archive (modis_2000_all_countries.zip)](https://github.com/nisha200726/MODIS-C6.1/releases/download/v1.0.0/modis_2000_all_countries.zip)
-- **Local Storage:** The full collection of 26 annual ZIP archives (2000–2025, ~1.80 GiB) and extracted country CSVs are kept locally and excluded from Git history via `.gitignore` to maintain a lightweight, fast repository.
-- **Sample Datasets:** Small sample datasets and attribute descriptors are maintained in [`sample_data/`](sample_data/) for immediate out-of-the-box testing.
-- **Source Code & Pipelines:** Analysis, filtering, and upload utilities are tracked in [`scripts/`](scripts/).
+The complete global dataset comprises **26 annual archives (2000–2025)** containing **5,275 country-level CSV files** (~1.82 GiB compressed, ~8.11 GiB uncompressed).
+
+To avoid repository bloat, connection timeouts, and Git bandwidth limitations, raw datasets are kept outside Git history and can be downloaded on-demand using our automated script or direct links below.
+
+### 📥 Automated Downloader & Extractor
+
+Use the built-in script [`scripts/download_modis.py`](scripts/download_modis.py) to download and extract any year or the entire collection:
+
+```bash
+# Download and extract a specific year (e.g. 2024)
+python scripts/download_modis.py --year 2024 --extract
+
+# Download all 26 yearly archives (2000-2025)
+python scripts/download_modis.py --all
+
+# Download and extract all archives into country-wise folders
+python scripts/download_modis.py --all --extract
+```
+
+### 📋 Complete Dataset Inventory & Direct Download Links
+
+| Year | Archive Filename | Compressed Size | Country CSVs | Direct Download Link | GitHub Release Asset |
+|:---:|---|:---:|:---:|:---:|:---:|
+| **2000** | `modis_2000_all_countries.zip` | 4.44 MB | 163 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2000/modis_2000_all_countries.zip) | [Release v1.0.0 Asset](https://github.com/nisha200726/MODIS-C6.1/releases/download/v1.0.0/modis_2000_all_countries.zip) |
+| **2001** | `modis_2001_all_countries.zip` | 30.08 MB | 197 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2001/modis_2001_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2002** | `modis_2002_all_countries.zip` | 62.25 MB | 199 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2002/modis_2002_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2003** | `modis_2003_all_countries.zip` | 86.19 MB | 204 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2003/modis_2003_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2004** | `modis_2004_all_countries.zip` | 85.22 MB | 202 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2004/modis_2004_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2005** | `modis_2005_all_countries.zip` | 85.77 MB | 208 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2005/modis_2005_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2006** | `modis_2006_all_countries.zip` | 78.62 MB | 202 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2006/modis_2006_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2007** | `modis_2007_all_countries.zip` | 85.85 MB | 208 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2007/modis_2007_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2008** | `modis_2008_all_countries.zip` | 80.67 MB | 205 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2008/modis_2008_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2009** | `modis_2009_all_countries.zip` | 74.66 MB | 205 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2009/modis_2009_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2010** | `modis_2010_all_countries.zip` | 78.86 MB | 203 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2010/modis_2010_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2011** | `modis_2011_all_countries.zip` | 78.70 MB | 201 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2011/modis_2011_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2012** | `modis_2012_all_countries.zip` | 83.07 MB | 204 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2012/modis_2012_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2013** | `modis_2013_all_countries.zip` | 70.84 MB | 207 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2013/modis_2013_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2014** | `modis_2014_all_countries.zip` | 74.31 MB | 204 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2014/modis_2014_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2015** | `modis_2015_all_countries.zip` | 79.32 MB | 209 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2015/modis_2015_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2016** | `modis_2016_all_countries.zip` | 73.90 MB | 207 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2016/modis_2016_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2017** | `modis_2017_all_countries.zip` | 74.66 MB | 205 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2017/modis_2017_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2018** | `modis_2018_all_countries.zip` | 70.46 MB | 206 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2018/modis_2018_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2019** | `modis_2019_all_countries.zip` | 76.72 MB | 202 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2019/modis_2019_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2020** | `modis_2020_all_countries.zip` | 74.35 MB | 211 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2020/modis_2020_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2021** | `modis_2021_all_countries.zip` | 73.70 MB | 204 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2021/modis_2021_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2022** | `modis_2022_all_countries.zip` | 63.39 MB | 204 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2022/modis_2022_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2023** | `modis_2023_all_countries.zip` | 77.98 MB | 207 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2023/modis_2023_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2024** | `modis_2024_all_countries.zip` | 80.63 MB | 206 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2024/modis_2024_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **2025** | `modis_2025_all_countries.zip` | 61.77 MB | 202 files | [NASA FIRMS Download](https://firms.modaps.eosdis.nasa.gov/data/country/modis/2025/modis_2025_all_countries.zip) | [Release v1.0.0](https://github.com/nisha200726/MODIS-C6.1/releases/tag/v1.0.0) |
+| **Total**| **26 archives** | **~1.82 GiB** | **5,275 CSVs** | **Full 2000–2025 Coverage** | [All Releases](https://github.com/nisha200726/MODIS-C6.1/releases) |
 
 ---
 
